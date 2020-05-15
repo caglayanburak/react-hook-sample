@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-const ProductList = (props) => {
+const ProductList = ({parentMessage}) => {
 
     return (
         <div>
-            ProductList {this.props.title}
+            ProductList <b>{parentMessage}</b>
         </div>
     );
 }

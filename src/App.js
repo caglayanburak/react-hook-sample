@@ -6,6 +6,7 @@ import CategoryList from './CategoryList';
 import ProductList from './ProductList';
 
 function App() {
+  let parentMessage = "Parent Message";
   return (
     <div className="App">
       <h3>Hi bro</h3>
@@ -18,7 +19,7 @@ function App() {
             <CategoryList />
           </Col>
           <Col xs="3">
-            <ProductList title="test" />
+            <ProductList parentMessage={parentMessage} />
           </Col>
         </Row>
       </Container>
