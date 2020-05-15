@@ -3,12 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Provider } from 'react-redux';
+import { createStore, combineReducers } from 'redux';
+import counterReducer from './reducers/counterReducer';
+import nameReducer from './reducers/nameReducer';
+
+var rootReducer = combineReducers({
+  counterReducer,
+  nameReducer
+})
+const store = createStore(rootReducer, { count: 0, name: '' })
+
+
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
