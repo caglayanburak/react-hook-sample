@@ -6,15 +6,20 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Provider } from 'react-redux';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import counterReducer from './reducers/counterReducer';
 import nameReducer from './reducers/nameReducer';
+import postReducer from './reducers/postReducer';
+import thunk from 'redux-thunk';
 
+
+//todo: ayrı bir dosyaya al.
 var rootReducer = combineReducers({
   counterReducer,
-  nameReducer
+  nameReducer,
+  posts: postReducer
 })
-const store = createStore(rootReducer, { count: 0, name: '' })
+const store = createStore(rootReducer, { count: 0, name: '' }, applyMiddleware(thunk))
 
 
 

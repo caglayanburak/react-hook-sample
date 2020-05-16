@@ -1,6 +1,9 @@
+
+const UPDATE_NAME = 'UPDATE_NAME';
+
 const nameReducer = (state = { name: "" }, action) => {
     switch (action.type) {
-        case 'UPDATE_NAME':
+        case UPDATE_NAME:
 
             return {
                 ...state,

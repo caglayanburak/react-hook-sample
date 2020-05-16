@@ -2,8 +2,10 @@ import React from 'react';
 import './App.css';
 import Navi from './Navi';
 import { Container, Row, Col } from 'reactstrap'
-import CategoryList from './CategoryList';
-import ProductList from './ProductList';
+import CategoryList from './components/CategoryList';
+import ProductList from './components/ProductList';
+import { Post } from './components/PostComponent';
+import PostPage from './PostPage';
 
 function App() {
   let parentMessage = "Parent Message";
@@ -22,7 +24,10 @@ function App() {
             <ProductList parentMessage={parentMessage} />
           </Col>
         </Row>
+        <Row>
+        </Row>
       </Container>
+      <PostPage />
     </div>
   );
 }
