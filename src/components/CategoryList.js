@@ -8,8 +8,8 @@ function CategoryList() {
     //     ...state.counterReducer,
     //     ...state.nameReducer
     // }));
-
-    const handleUpdateName =(event)=> {
+    const postsSelector = useSelector((state) => state.posts.posts);
+    const handleUpdateName = (event) => {
         dispatch({
             type: 'UPDATE_NAME',
             payload: event.target.value
@@ -19,7 +19,7 @@ function CategoryList() {
 
     return (
         <div>
-            CategoryList
+            CategoryList {postsSelector.length}
             <input onChange={handleUpdateName} />
         </div>
     );

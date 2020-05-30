@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import Post from "./components/PostComponent";
 
 
-
+//container
 const PostPage = ({ dispatch, loading, posts, hasErrors }) => {
 
     useEffect(() => {
